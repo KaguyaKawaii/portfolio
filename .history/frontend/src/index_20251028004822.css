@@ -1,0 +1,24 @@
+/* ✅ 1️⃣ Google Fonts first */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* ✅ 2️⃣ Then Tailwind (only once) */
+@import "tailwindcss";
+
+/* ✅ 3️⃣ Optional: your own CSS rules */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide {
+  display: inline-block;
+  animation: slide 10s linear infinite;
+}

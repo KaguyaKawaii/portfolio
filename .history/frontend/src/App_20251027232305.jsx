@@ -1,0 +1,27 @@
+import { useState } from 'react'
+
+
+function App() {
+
+  return (
+    <>
+      <header className='bg-gray-950 h-[50px]'>
+        <div className='flex justify-around items-center text-white'>
+          <h1 className='font-bold text-lg'>My Portfolio</h1>
+          
+          <div className='flex gap-4 font-semibold'>
+            <p>Home</p>
+            <p>About</p>
+            <p>Contact</p>
+            
+          </div>
+        
+        
+        
+        </div>
+      </header>
+    </>
+  )
+}
+
+export default App
