@@ -5,7 +5,7 @@ import project2 from './assets/project2.png'
 import { FaGithub, FaInstagram, FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import resumePDF from './assets/Portfolio - Stephen P. Madero Jr..pdf'; // adjust path if needed
+import resumePDF from '../assets/portfolio.pdf'; // adjust path if needed
 
 
 
