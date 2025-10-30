@@ -85,7 +85,7 @@ function App() {
                   document.getElementById("about").scrollIntoView({ behavior: 'smooth' });
                   setIsMobileMenuOpen(false);
                 }}
-                className="hover:text-red-500 text-white duration-300 cursor-pointer py-2"
+                className="hover:text-red-500 duration-300 cursor-pointer py-2"
               >
                 <p>About Me</p>
               </button>
@@ -95,7 +95,7 @@ function App() {
                   document.getElementById("project").scrollIntoView({ behavior: 'smooth' });
                   setIsMobileMenuOpen(false);
                 }}
-                className="hover:text-red-500 text-white duration-300 cursor-pointer py-2"
+                className="hover:text-red-500 duration-300 cursor-pointer py-2"
               >
                 <p>Project</p>
               </button>
@@ -105,7 +105,7 @@ function App() {
                   document.getElementById("contact").scrollIntoView({ behavior: 'smooth' });
                   setIsMobileMenuOpen(false);
                 }}
-                className="hover:text-red-500 text-white duration-300 cursor-pointer py-2"
+                className="hover:text-red-500 duration-300 cursor-pointer py-2"
               >
                 <p>Contact</p>
               </button>
@@ -115,9 +115,8 @@ function App() {
       </header>
 
       <main className='bg-linear-180 from-[#1E1E1E] to-[#0F0E0E] min-h-screen text-white pt-[70px] md:pt-[90px]'>
-        <div id='home' className='flex flex-col-reverse md:flex-row justify-between items-center min-h-[90vh] px-4 md:px-8 lg:px-20 py-8 lg:py-0 gap-8 lg:gap-4'>
-          {/* Content - Comes FIRST in mobile (appears above image) */}
-          <div className='text-center md:text-left w-full md:w-1/2'>
+        <div id='home' className='flex flex-col lg:flex-row justify-between items-center min-h-[90vh] px-4 md:px-8 lg:px-20 py-8 lg:py-0 gap-8 lg:gap-4'>
+          <div className='text-center lg:text-left w-full lg:w-1/2'>
             <div className='text-xl md:text-2xl lg:text-3xl'>
               <h1 className='font-semibold'>Hello, I'm Stephen P. Madero Jr.</h1>
             </div>
@@ -127,12 +126,12 @@ function App() {
               </p>
 
               <div className='my-6 md:my-8'>
-                <button className='ring-1 ring-red-500 text-red-500 rounded-3xl w-full md:w-[250px] p-3 text-center hover:text-gray-800 hover:bg-white hover:ring-gray-800 transition-all duration-300 cursor-pointer hover:font-semibold mx-auto md:mx-0'>
+                <button className='ring-1 ring-red-500 text-red-500 rounded-3xl w-full md:w-[250px] p-3 text-center hover:text-gray-800 hover:bg-white hover:ring-gray-800 transition-all duration-300 cursor-pointer hover:font-semibold mx-auto lg:mx-0'>
                   Download Resume
                 </button>
               </div>
 
-              <div className='flex justify-center md:justify-start gap-4 md:gap-6 pt-4 md:pt-8'>
+              <div className='flex justify-center lg:justify-start gap-4 md:gap-6 pt-4 md:pt-8'>
                 {/* Email */}
                 <a
                   href="mailto:stephenpatingomadero@gmail.com"
@@ -182,8 +181,7 @@ function App() {
             </div>
           </div>
 
-          {/* Image - Comes SECOND in mobile (appears below content) */}
-          <div className='w-full md:w-1/2 flex justify-center'>
+          <div className='w-full lg:w-1/2 flex justify-center'>
             <div className='w-4/5 md:w-3/5 lg:w-4/5 xl:w-3/4'>
               <img
                 src={pic}

@@ -75,7 +75,7 @@ function App() {
                   document.getElementById("home").scrollIntoView({ behavior: 'smooth' });
                   setIsMobileMenuOpen(false);
                 }}
-                className="hover:text-red-500 text-white duration-300 cursor-pointer py-2"
+                className="hover:text-red-500 duration-300 cursor-pointer py-2"
               >
                 <p>Home</p>
               </button>
@@ -85,7 +85,7 @@ function App() {
                   document.getElementById("about").scrollIntoView({ behavior: 'smooth' });
                   setIsMobileMenuOpen(false);
                 }}
-                className="hover:text-red-500 text-white duration-300 cursor-pointer py-2"
+                className="hover:text-red-500 duration-300 cursor-pointer py-2"
               >
                 <p>About Me</p>
               </button>
@@ -95,7 +95,7 @@ function App() {
                   document.getElementById("project").scrollIntoView({ behavior: 'smooth' });
                   setIsMobileMenuOpen(false);
                 }}
-                className="hover:text-red-500 text-white duration-300 cursor-pointer py-2"
+                className="hover:text-red-500 duration-300 cursor-pointer py-2"
               >
                 <p>Project</p>
               </button>
@@ -105,7 +105,7 @@ function App() {
                   document.getElementById("contact").scrollIntoView({ behavior: 'smooth' });
                   setIsMobileMenuOpen(false);
                 }}
-                className="hover:text-red-500 text-white duration-300 cursor-pointer py-2"
+                className="hover:text-red-500 duration-300 cursor-pointer py-2"
               >
                 <p>Contact</p>
               </button>
