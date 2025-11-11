@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <header className='bg-[#1E201E] h-[70px] md:h-[90px] w-full shadow-sm shadow-[#dc143c] fixed top-0 z-50'>
+      <header className='bg-[#0F0E0E] h-[70px] md:h-[90px] w-full shadow-lg shadow-[#dc143c] fixed top-0 z-50'>
         <div className='flex justify-between items-center h-full text-white px-4 md:px-8 lg:px-20'>
           <h1 className='font-bold font-montserrat text-[20px] md:text-[25px]'>My Portfolio</h1>
           
@@ -304,13 +304,7 @@ function App() {
                   Built with a focus on accessibility and efficiency, it enables students and faculty to book rooms effortlessly, 
                   view real-time schedules, and receive instant updates ensuring a smooth and organized reservation experience for everyone.
                 </p>
-
-              <div>
-                <p>Github</p>
               </div>
-              </div>
-
-              
             </div>
           </div>
         </div>

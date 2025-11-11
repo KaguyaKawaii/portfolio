@@ -304,13 +304,7 @@ function App() {
                   Built with a focus on accessibility and efficiency, it enables students and faculty to book rooms effortlessly, 
                   view real-time schedules, and receive instant updates ensuring a smooth and organized reservation experience for everyone.
                 </p>
-
-              <div>
-                <p>Github</p>
               </div>
-              </div>
-
-              
             </div>
           </div>
         </div>

@@ -306,7 +306,7 @@ function App() {
                 </p>
 
               <div>
-                <p>Github</p>
+                github
               </div>
               </div>
 

@@ -305,8 +305,8 @@ function App() {
                   view real-time schedules, and receive instant updates ensuring a smooth and organized reservation experience for everyone.
                 </p>
 
-              <div>
-                <p>Github</p>
+                <div>
+                github
               </div>
               </div>
 
