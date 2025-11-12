@@ -180,7 +180,7 @@ function App() {
         </div>
       </header>
 
-      <main className={`${isDarkMode ? 'bg-linear-to-b from-[#1E1E1E] to-[#0F0E0E]' : 'bg-linear-to-t from-gray-100 to-white'} min-h-screen ${isDarkMode ? 'text-white' : 'text-gray-900'} pt-[70px] md:pt-[90px] transition-colors duration-300`}>
+      <main className={`${isDarkMode ? 'bg-gradient-to-b from-[#1E1E1E] to-[#0F0E0E]' : 'bg-gradient-to-b from-gray-100 to-white'} min-h-screen ${isDarkMode ? 'text-white' : 'text-gray-900'} pt-[70px] md:pt-[90px] transition-colors duration-300`}>
         <div id='home' className='flex flex-col-reverse md:flex-row justify-between items-center min-h-[90vh] px-4 md:px-8 lg:px-20 py-8 lg:py-0 gap-8 lg:gap-4'>
           {/* Content - Comes FIRST in mobile (appears above image) */}
           <div className='text-center md:text-left w-full md:w-1/2'>
