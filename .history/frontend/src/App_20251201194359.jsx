@@ -2,16 +2,9 @@ import { useState, useEffect } from 'react'
 import pic from './assets/image.png'
 import project from './assets/project.png'
 import project2 from './assets/project2.png'
-
-import project3 from './assets/circulink/circu1.png' 
-import project4 from './assets/circulink/circu2.png'
-import project5 from './assets/deliverdash/ddash1.png' 
-import project6 from './assets/deliverdash/ddash2.png' 
-
-
 import { FaGithub, FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { MdEmail, MdClose, MdNavigateNext, MdNavigateBefore } from "react-icons/md";
+import { MdEmail } from "react-icons/md";
 import resumePDF from './assets/Madero - Resume.pdf';
 
 function App() {
@@ -19,27 +12,6 @@ function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
-  
-  // Modal gallery state
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentProject, setCurrentProject] = useState(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  // Define project images for gallery
-  const projectGalleries = {
-    circulink: [
-      project,
-      project3, // Add more images for CircuLink
-      project4,
-      // Add more image imports as needed
-    ],
-    deliverdash: [
-      project2,
-      project5,
-      project6,
-      // Add more images for DeliverDash if available
-    ]
-  };
 
   useEffect(() => {
     const updateScrollProgress = () => {
@@ -56,55 +28,6 @@ function App() {
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
-
-  // Open modal with project images
-  const openProjectModal = (projectId) => {
-    setCurrentProject(projectId);
-    setCurrentImageIndex(0);
-    setIsModalOpen(true);
-    // Disable body scroll when modal is open
-    document.body.style.overflow = 'hidden';
-  };
-
-  // Close modal
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setCurrentProject(null);
-    // Re-enable body scroll
-    document.body.style.overflow = 'auto';
-  };
-
-  // Navigate to next image
-  const nextImage = () => {
-    if (currentProject && projectGalleries[currentProject]) {
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex === projectGalleries[currentProject].length - 1 ? 0 : prevIndex + 1
-      );
-    }
-  };
-
-  // Navigate to previous image
-  const prevImage = () => {
-    if (currentProject && projectGalleries[currentProject]) {
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex === 0 ? projectGalleries[currentProject].length - 1 : prevIndex - 1
-      );
-    }
-  };
-
-  // Handle keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (!isModalOpen) return;
-      
-      if (e.key === 'Escape') closeModal();
-      if (e.key === 'ArrowRight') nextImage();
-      if (e.key === 'ArrowLeft') prevImage();
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isModalOpen, currentProject, currentImageIndex]);
 
   return (
     <>
@@ -452,16 +375,13 @@ function App() {
             <div className='flex flex-col lg:flex-row items-center justify-between min-h-[400px] md:min-h-[500px] gap-6 md:gap-8 lg:gap-12'>
               
               <div className='w-full lg:w-1/2'>
-                <button 
-                  className='block w-full focus:outline-none'
-                  onClick={() => openProjectModal('circulink')}
-                >
+                <a className='block' href="https://circulink-beta-testing.vercel.app/" target="_blank" rel="noopener noreferrer">
                   <img 
                     src={project}
-                    className='rounded-2xl shadow-2xl hover:shadow-red-800 transition-all duration-500 hover:scale-105 w-full h-[250px] md:h-[350px] lg:h-[400px] object-cover cursor-pointer'
+                    className='rounded-2xl shadow-2xl hover:shadow-red-800 transition-all duration-500 hover:scale-105 w-full h-[250px] md:h-[350px] lg:h-[400px] object-cover'
                     alt="CircuLink Project" 
                   />
-                </button>
+                </a>
               </div>
 
               <div className='text-center lg:text-left w-full lg:w-1/2'>
@@ -497,39 +417,36 @@ function App() {
           </div>
 
           <div className='flex flex-col lg:flex-row items-center justify-between min-h-[400px] md:min-h-[500px] gap-6 md:gap-8 lg:gap-12 mt-12'>
-            <div className='w-full lg:w-1/2'>
-              <button 
-                className='block w-full focus:outline-none'
-                onClick={() => openProjectModal('deliverdash')}
-              >
-                <img 
-                  src={project2}
-                  className='rounded-2xl shadow-2xl hover:shadow-red-800 transition-all duration-500 hover:scale-105 w-full h-[250px] md:h-[350px] lg:h-[400px] object-cover cursor-pointer'
-                  alt="DeliverDash Project" 
-                />
-              </button>
-            </div>
+  <div className='w-full lg:w-1/2'>
+    <a className='block' href="https://github.com/KaguyaKawaii/DeliverDash" target="_blank" rel="noopener noreferrer">
+      <img 
+        src={project2}
+        className='rounded-2xl shadow-2xl hover:shadow-red-800 transition-all duration-500 hover:scale-105 w-full h-[250px] md:h-[350px] lg:h-[400px] object-cover'
+        alt="DeliverDash Project" 
+      />
+    </a>
+  </div>
 
-            <div className='text-center lg:text-left w-full lg:w-1/2'>
-              <h1 className={`text-xl md:text-2xl lg:text-3xl font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>DeliverDash</h1>
-              <p className="text-red-500 font-medium text-sm md:text-base mt-2">Course Project | Delivery & Order Management System</p>
-              <div className={`border-b my-4 md:my-5 ${isDarkMode ? 'border-gray-500' : 'border-gray-300'}`}></div>
-              <p className={`text-sm md:text-base lg:text-lg leading-relaxed ${isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>
-                DeliverDash is a delivery and order management system built using PHP, MySQL, and XAMPP. It allows users to create and track orders, manage deliveries, and handle CRUD operations efficiently. Focused on backend logic and database management.
-              </p>
+  <div className='text-center lg:text-left w-full lg:w-1/2'>
+    <h1 className={`text-xl md:text-2xl lg:text-3xl font-semibold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>DeliverDash</h1>
+    <p className="text-red-500 font-medium text-sm md:text-base mt-2">Course Project | Delivery & Order Management System</p>
+    <div className={`border-b my-4 md:my-5 ${isDarkMode ? 'border-gray-500' : 'border-gray-300'}`}></div>
+    <p className={`text-sm md:text-base lg:text-lg leading-relaxed ${isDarkMode ? 'text-gray-200' : 'text-gray-700'}`}>
+      DeliverDash is a delivery and order management system built using PHP, MySQL, and XAMPP. It allows users to create and track orders, manage deliveries, and handle CRUD operations efficiently. Focused on backend logic and database management.
+    </p>
 
-              <div className="mt-4 flex gap-4 justify-center lg:justify-start">
-                <a 
-                  href="https://github.com/KaguyaKawaii/deliverdash"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'} `}
-                >
-                  <FaGithub /> GitHub Repository
-                </a>
-              </div>
-            </div>
-          </div>
+    <div className="mt-4 flex gap-4 justify-center lg:justify-start">
+      <a 
+        href="https://github.com/KaguyaKawaii/DeliverDash"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'} `}
+      >
+        <FaGithub /> GitHub Repository
+      </a>
+    </div>
+  </div>
+</div>
         </div>
 
         {/* Contact Section */}
@@ -636,85 +553,6 @@ function App() {
           </div>
         </div>
       </main>
-
-      {/* Project Image Modal */}
-      {isModalOpen && currentProject && projectGalleries[currentProject] && (
-        <div className="fixed inset-0 z-100 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm transition-opacity duration-300">
-          <div className="relative w-full max-w-4xl max-h-[90vh]">
-            {/* Close Button */}
-            <button
-              onClick={closeModal}
-              className="absolute -top-10 right-0 md:-right-10 text-white hover:text-red-500 text-2xl md:text-3xl z-10 transition-colors"
-            >
-              <MdClose />
-            </button>
-            
-            {/* Navigation Buttons */}
-            {projectGalleries[currentProject].length > 1 && (
-              <>
-                <button
-                  onClick={prevImage}
-                  className="absolute left-2 md:-left-12 top-1/2 transform -translate-y-1/2 text-white hover:text-red-500 text-3xl md:text-4xl z-10 transition-colors p-2"
-                >
-                  <MdNavigateBefore />
-                </button>
-                
-                <button
-                  onClick={nextImage}
-                  className="absolute right-2 md:-right-12 top-1/2 transform -translate-y-1/2 text-white hover:text-red-500 text-3xl md:text-4xl z-10 transition-colors p-2"
-                >
-                  <MdNavigateNext />
-                </button>
-              </>
-            )}
-            
-            {/* Image Counter */}
-            {projectGalleries[currentProject].length > 1 && (
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-3 py-1 rounded-full text-sm">
-                {currentImageIndex + 1} / {projectGalleries[currentProject].length}
-              </div>
-            )}
-            
-            {/* Project Image */}
-            <img
-              src={projectGalleries[currentProject][currentImageIndex]}
-              alt={`Project ${currentProject} - Image ${currentImageIndex + 1}`}
-              className="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-2xl"
-            />
-            
-            {/* Project Title */}
-            <div className="mt-4 text-center">
-              <h3 className="text-white text-xl md:text-2xl font-semibold">
-                {currentProject === 'circulink' ? 'CircuLink Project' : 'DeliverDash Project'} 
-                <span className="ml-2 text-gray-300">
-                  (Image {currentImageIndex + 1})
-                </span>
-              </h3>
-              <p className="text-gray-400 mt-2">
-                Use arrow keys or click navigation buttons to browse images
-              </p>
-            </div>
-            
-            {/* Image Dots Indicator */}
-            {projectGalleries[currentProject].length > 1 && (
-              <div className="flex justify-center mt-9 gap-2">
-                {projectGalleries[currentProject].map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all ${
-                      index === currentImageIndex 
-                        ? 'bg-red-500 scale-125' 
-                        : 'bg-gray-500 hover:bg-gray-400'
-                    }`}
-                    aria-label={`Go to image ${index + 1}`}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      )}
     </>
   )
 }

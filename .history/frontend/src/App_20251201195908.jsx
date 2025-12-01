@@ -2,13 +2,9 @@ import { useState, useEffect } from 'react'
 import pic from './assets/image.png'
 import project from './assets/project.png'
 import project2 from './assets/project2.png'
-
-import project3 from './assets/circulink/circu1.png' 
-import project4 from './assets/circulink/circu2.png'
-import project5 from './assets/deliverdash/ddash1.png' 
-import project6 from './assets/deliverdash/ddash2.png' 
-
-
+// Add more project images if you have them
+import project3 from './assets/project3.png' // Example additional image
+import project4 from './assets/project4.png' // Example additional image
 import { FaGithub, FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail, MdClose, MdNavigateNext, MdNavigateBefore } from "react-icons/md";
@@ -35,8 +31,6 @@ function App() {
     ],
     deliverdash: [
       project2,
-      project5,
-      project6,
       // Add more images for DeliverDash if available
     ]
   };
@@ -520,7 +514,7 @@ function App() {
 
               <div className="mt-4 flex gap-4 justify-center lg:justify-start">
                 <a 
-                  href="https://github.com/KaguyaKawaii/deliverdash"
+                  href="https://github.com/KaguyaKawaii/DeliverDash"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'} `}
@@ -639,7 +633,7 @@ function App() {
 
       {/* Project Image Modal */}
       {isModalOpen && currentProject && projectGalleries[currentProject] && (
-        <div className="fixed inset-0 z-100 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm transition-opacity duration-300">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm transition-opacity duration-300">
           <div className="relative w-full max-w-4xl max-h-[90vh]">
             {/* Close Button */}
             <button
@@ -697,7 +691,7 @@ function App() {
             
             {/* Image Dots Indicator */}
             {projectGalleries[currentProject].length > 1 && (
-              <div className="flex justify-center mt-9 gap-2">
+              <div className="flex justify-center mt-6 gap-2">
                 {projectGalleries[currentProject].map((_, index) => (
                   <button
                     key={index}

@@ -520,7 +520,7 @@ function App() {
 
               <div className="mt-4 flex gap-4 justify-center lg:justify-start">
                 <a 
-                  href="https://github.com/KaguyaKawaii/deliverdash"
+                  href="https://github.com/KaguyaKawaii/DeliverDash"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${isDarkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'} `}
